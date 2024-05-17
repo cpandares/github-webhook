@@ -1,6 +1,7 @@
 import express from 'express';
 import { Evns } from './config';
 import { GithubController } from './presentation/github/controller';
+import { GithubService } from './presentation/services/github.service';
 
 (()=>{
 main();
@@ -10,6 +11,7 @@ main();
 
 async function main(){
     const app = express();
+    const service = new GithubService();
     const controller = new GithubController();
 
     app.use(express.json());
